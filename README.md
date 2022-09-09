@@ -1,13 +1,13 @@
-Topics covered
+# Topics covered
 
-Python, HTML, CSS, Heroku, SQL
+<li>Python, HTML, CSS, Heroku, SQL</li>
 
-Flask Web Framework
+<li>Flask Web Framework</li>
 
-SQL Databases
+<li>SQL Databases</li>
 
-Decorators
+<li>Decorators</li>
 
-OOP
+<li>OOP</li>
 
-Functions
+<li>Functions</li>
