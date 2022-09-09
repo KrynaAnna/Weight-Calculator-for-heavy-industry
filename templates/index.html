@@ -1,0 +1,120 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../static/js/script.js"></script>
+    <!-- Fonts -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');</style>
+    <!-- My styles -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/images/logo.png">
+{% endblock %}
+
+{% block title %}Weight calculator{% endblock %}
+
+{% block content %}
+    <div class="row" style="margin: unset">
+        <div class="main col-lg-9">
+            <div>
+                <h2 class="title">WEIGHT CALCULATOR</h2>
+                <h6 class="title">for heavy industry</h6>
+
+                <form name='MyForm' class="question" action="/" method="post">
+                    <h3>1. PLEASE CHOOSE THE SHAPE ...</h3>
+                    <label class="col-lg-2 col-md-4 col-sm-6">
+                        <input type="radio" hidden="hidden" name="forma" value="block" onclick="func()" checked>
+                        <img class="option" src="../static/images/cube.png" alt="Option 1">
+                    </label>
+                    <label class="col-lg-2 col-md-4 col-sm-6" >
+                        <input type="radio" hidden="hidden" name="forma" value="cylinder" onclick="func()">
+                        <img class="option" src="../static/images/cylinder.png" alt="Option 2">
+                    </label>
+                    <label class="col-lg-2 col-md-4 col-sm-6">
+                        <input type="radio" hidden="hidden" name="forma" value="tube" onclick="func()">
+                        <img class="option" src="../static/images/tube.png" alt="Option 3">
+                    </label>
+                    <label class="col-lg-2 col-md-4 col-sm-6">
+                        <input type="radio" hidden="hidden" name="forma" value="ball" onclick="func()">
+                        <img class="option" src="../static/images/ball.png" alt="Option 4">
+                    </label>
+
+                    <h3>2. PLEASE CHOOSE THE TYPE OF MATERIAL ...</h3>
+                    <select class="form-select col-lg-3" name="material" aria-label="Default select example">
+                        <option selected value="Alum">Aluminium</option>
+                        <option value="Stl№45">Steel№45</option>
+                        <option value="Stless">Stainless Steel</option>
+                    </select>
+
+                    <h3>3. PLEASE ENTER THE DIMENSIONS OF THE WORKPIECE ...</h3>
+                    <div class="wstawka">
+                        <label class="dim col-lg-3 form">
+                            <input name="measure" type="number" step=any placeholder="Length" min="0">
+                        </label>
+                        <label class="dim col-lg-3 form">
+                            <input name="measure" type="number" step=any placeholder="Width" min="0">
+                        </label>
+                        <label class="dim col-lg-3 form">
+                            <input name="measure" type="number" step=any placeholder="Height" min="0">
+                        </label>
+
+                        <label id="sliderLabel">
+                            <input type="checkbox" name="mm_inch" value="mm" checked/>
+                                <span id="slider">
+                                    <span id="sliderMm">MM</span>
+                                    <span id="sliderInch">INCH</span>
+                                    <span id="sliderBlock"></span>
+                                </span>
+                        </label>
+                    </div>
+
+                    <section class="result">
+                        <h2 class="result">RESULT: <span style="color: var(--second-color)}"> {{ result }} </span></h2>
+                    </section>
+
+                    <button name='submit' type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="66px" height="52px"
+                         viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet" fill="#49bfcb" style="padding: 5px">
+                        <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                           stroke="none"><path d="M160 595 l-44 -45 114 -115 115 -115 -115 -115 -115 -115 45 -45 45
+                           -45 160 160 160 160 -160 160 -160 160 -45 -45z"/></g>
+                    </svg>
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="history col-lg-3">
+            <div class="data">
+                <h2 class="title">HISTORY</h2>
+                <br>
+
+                {% for n in notes: %}
+                <div class="text_col">
+                    <div class="text">
+                        <h4>{{n.forma}} - {{n.material}} - ({{n.measures}}, {{n.mm_inch}})</h4>
+                        <h4>{{n.result}}</h4>
+
+                    </div>
+                    <a href="{{ url_for('delete', id=n.id) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg"  id="bin" width="20" height="20" stroke="none" fill="#49bfcb" fill-rule="nonzero">
+                            <g transform="matrix(0.078125 0 0 0.078125 0 0)"><g transform="matrix(2.81 0 0 2.81 1.4065934 1.4065934)">
+                                <path transform="matrix(1 0 0 1 0 0)"  d="M78.052 14.538L11.948 14.538C 10.844 14.538 9.948 13.642 9.948 12.538C 9.948 11.434 10.844 10.538 11.948 10.538L11.948 10.538L78.051994 10.538C 79.15599 10.538 80.051994 11.434 80.051994 12.538C 80.051994 13.642 79.156 14.538 78.052 14.538z M57.711 14.538L32.289 14.538C 31.185001 14.538 30.289001 13.642 30.289001 12.538L30.289001 12.538L30.289001 7.36C 30.289001 3.301 33.591003 0 37.649002 0L37.649002 0L52.352 0C 56.41 0 59.711002 3.302 59.711002 7.36L59.711002 7.36L59.711002 12.538C 59.711 13.643 58.815 14.538 57.711 14.538zM34.289 10.538L55.711002 10.538L55.711002 7.36C 55.711002 5.507 54.204002 4 52.352 4L52.352 4L37.649 4C 35.795998 4 34.288998 5.507 34.288998 7.3599997L34.288998 7.3599997L34.288998 10.538z M73.771 19.39C 73.393005 18.989 72.867004 18.762 72.316 18.762L72.316 18.762L17.685 18.762C 17.133999 18.762 16.608 18.988998 16.23 19.39C 15.851999 19.789999 15.655999 20.328999 15.688 20.879L15.688 20.879L19.325 82.998C 19.555 86.924 22.816 90 26.75 90L26.75 90L63.249 90C 67.183 90 70.444 86.924 70.676 82.997L70.676 82.997L74.313 20.878002C 74.344 20.329 74.148 19.79 73.771 19.39zM32.777 76.099C 32.737 76.102 32.698 76.103 32.658 76.103C 31.607 76.103 30.725 75.283 30.663 74.21999L30.663 74.21999L28.373001 35.105995C 28.309002 34.002995 29.150002 33.056995 30.253 32.992996C 31.341 32.930996 32.302002 33.769997 32.366 34.872997L32.366 34.872997L34.656002 73.98599C 34.721 75.088 33.88 76.034 32.777 76.099zM47 74.103C 47 75.20699 46.104 76.103 45 76.103C 43.896 76.103 43 75.20699 43 74.103L43 74.103L43 34.989C 43 33.885 43.896 32.989 45 32.989C 46.104 32.989 47 33.885 47 34.989L47 34.989L47 74.103zM59.336 74.22C 59.274 75.283005 58.392998 76.103004 57.342 76.103004C 57.302998 76.103004 57.263 76.102005 57.223 76.09901C 56.12 76.035 55.279 75.088005 55.343998 73.98601L55.343998 73.98601L57.634 34.87301C 57.697 33.770008 58.627 32.92101 59.746998 32.993008C 60.85 33.057007 61.690998 34.00401 61.627 35.106007L61.627 35.106007L59.336 74.22z" /></g>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <hr>
+                {% endfor %}
+            </div>
+            <a href="{{ url_for('delete_all') }}"><button name='clean' type="button"><h5>CLEAN HISTORY</h5></button></a>
+        </div>
+    </div>
+{% endblock %}
