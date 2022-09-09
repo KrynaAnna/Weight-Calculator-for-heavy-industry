@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect, url_for, request
 from flask_bootstrap import Bootstrap
 from functools import reduce
 from math import pi
-from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
