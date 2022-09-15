@@ -8,6 +8,7 @@ This application is designed to help heavy industry engineers calculate the weig
 This application functions with the help of the Heroku server, using the open source database - Postgre. 
 The design was created using HTML/CSS/JS, for developing responsive website used Bootstrap.
 
+
 # Topics covered
 
 <li>Python</li>
