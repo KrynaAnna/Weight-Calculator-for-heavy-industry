@@ -12,8 +12,8 @@
 }
 
 h3 {
-    padding: 5px;
-    margin: 40px 0 30px 0;
+    padding: 8px;
+    margin: 30px 0 20px 0;
     letter-spacing: 4px;
     border: 1px solid var(--third-color);
     border-radius: 30px;
@@ -43,30 +43,33 @@ h6 {
 }
 
 body {
-    all: unset;
     height: 100vh;
+    margin: 0;
+    background-color: #ef8175;
+}
+.row {
+    height: 100%;
 }
                 /*  MAIN  */
 .main {
-    padding: 20px 150px 20px 150px;
+    padding: 2% 10% 2% 10%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     text-align: center;
     background-color: var(--first-color);
     color: var(--base-color);
-    height: 100vh;
-
 }
 
 button[name='submit'] {
     background-color: transparent;
     border-color: var(--third-color);
+    color: var(--third-color);
     padding: unset;
     align-items: center;
-    width: 8%;
-    height: 54px;
-    margin: 45px 0 20px 0;
+    width: 50%;
+    height: 50px;
+    margin-top: 55px;
 }
 .result {
     margin: 30px 0 0 0;
@@ -76,14 +79,13 @@ button[name='submit'] {
 
                 /*  HISTORY  */
 .history {
-    padding: 20px 30px 20px 30px;
+    padding: 2% 40px 2% 40px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     text-align: center;
     background-color: var(--second-color);
     color: var(--base-color);
-    height: 100vh;
 }
 
 .text {
@@ -113,8 +115,8 @@ button[name='clean'] {
     padding: 5px;
     text-align: center;
     width: 50%;
-    margin: 0 0 25px 0;
-    height: 54px;
+
+    height: 50px;
 }
 
 button:hover,svg:hover, #bin:hover{
@@ -132,6 +134,7 @@ button:hover,svg:hover, #bin:hover{
 .option {
     width: 90px;
     height: 90px;
+    margin: 10px;
 }
 /* image styles */
 input[type=radio] + img {
@@ -152,8 +155,6 @@ input[type=radio]:checked + img {
 /*switcher*/
 #sliderLabel {
     border: 1px solid #1C839A;;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
     border-radius: 3px;
     cursor: pointer;
     height: 32px;
@@ -161,7 +162,8 @@ input[type=radio]:checked + img {
     position: relative;
     width: 100px;
     display: inline-block;
-    margin: 0 30px 0 30px;
+    margin: 5px 5px 5px 5px;
+
 }
 #sliderLabel input {
     display: none;
@@ -212,7 +214,7 @@ input[type=radio]:checked + img {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    height: 340px;
+    height: 40px;
     left: 50px;
     width: 50px;
 }
@@ -232,7 +234,8 @@ input[type=number] {
     height: 35px;
     border-radius: 5px;
     padding-left: 12px;
-    width: 150px;
+    margin: 5px;
+    width: 90%;
 
 }
 .wstawka {
