@@ -20,26 +20,26 @@
 
 {% block content %}
     <div class="row" style="margin: unset">
-        <div class="main col-lg-9">
+        <div class="main col-lg-9 col-md-12 container">
             <div>
                 <h2 class="title">WEIGHT CALCULATOR</h2>
                 <h6 class="title">for heavy industry</h6>
 
-                <form name='MyForm' class="question" action="/" method="post">
+                <form action="/" method="post">
                     <h3>1. PLEASE CHOOSE THE SHAPE ...</h3>
-                    <label class="col-lg-2 col-md-4 col-sm-6">
+                    <label class="col-4 col-md-2">
                         <input type="radio" hidden="hidden" name="forma" value="block" onclick="func()" checked>
                         <img class="option" src="../static/images/cube.png" alt="Option 1">
                     </label>
-                    <label class="col-lg-2 col-md-4 col-sm-6" >
+                    <label class="col-4 col-md-2" >
                         <input type="radio" hidden="hidden" name="forma" value="cylinder" onclick="func()">
                         <img class="option" src="../static/images/cylinder.png" alt="Option 2">
                     </label>
-                    <label class="col-lg-2 col-md-4 col-sm-6">
+                    <label class="col-4 col-md-2">
                         <input type="radio" hidden="hidden" name="forma" value="tube" onclick="func()">
                         <img class="option" src="../static/images/tube.png" alt="Option 3">
                     </label>
-                    <label class="col-lg-2 col-md-4 col-sm-6">
+                    <label class="col-4 col-md-2">
                         <input type="radio" hidden="hidden" name="forma" value="ball" onclick="func()">
                         <img class="option" src="../static/images/ball.png" alt="Option 4">
                     </label>
@@ -52,17 +52,18 @@
                     </select>
 
                     <h3>3. PLEASE ENTER THE DIMENSIONS OF THE WORKPIECE ...</h3>
-                    <div class="wstawka">
-                        <label class="dim col-lg-3 form">
+                    <div class="wstawka row">
+                        <label class="col-12 col-lg-3 col-md-6">
                             <input name="measure" type="number" step=any placeholder="Length" min="0">
                         </label>
-                        <label class="dim col-lg-3 form">
+                        <label class="col-12 col-lg-3 col-md-6">
                             <input name="measure" type="number" step=any placeholder="Width" min="0">
                         </label>
-                        <label class="dim col-lg-3 form">
+                        <label class="col-12 col-lg-3 col-md-6">
                             <input name="measure" type="number" step=any placeholder="Height" min="0">
                         </label>
 
+                        <div class="slide col-12 col-lg-3 col-md-6">
                         <label id="sliderLabel">
                             <input type="checkbox" name="mm_inch" value="mm" checked/>
                                 <span id="slider">
@@ -71,27 +72,21 @@
                                     <span id="sliderBlock"></span>
                                 </span>
                         </label>
+                        </div>
                     </div>
 
                     <section class="result">
                         <h2 class="result">RESULT: <span style="color: var(--second-color)}"> {{ result }} </span></h2>
                     </section>
 
-                    <button name='submit' type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="66px" height="52px"
-                         viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet" fill="#49bfcb" style="padding: 5px">
-                        <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
-                           stroke="none"><path d="M160 595 l-44 -45 114 -115 115 -115 -115 -115 -115 -115 45 -45 45
-                           -45 160 160 160 160 -160 160 -160 160 -45 -45z"/></g>
-                    </svg>
-                    </button>
+                    <button name='submit' type="submit"><h5>SUBMIT</h5></button>
 
                 </form>
             </div>
 
         </div>
 
-        <div class="history col-lg-3">
+        <div class="history col-lg-3 col-md-12">
             <div class="data">
                 <h2 class="title">HISTORY</h2>
                 <br>
