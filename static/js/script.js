@@ -1,16 +1,18 @@
 function func() {
     let elem = document.querySelector('input[name="forma"]:checked').value;
 
-    block1 = `<label class="dim col-lg-3 form">
+    block1 = `<label class="col-12 col-lg-3 col-md-6">
                 <input name="measure" type="number" step=any placeholder="Length" min="0">
               </label>
-              <label class="dim col-lg-3 form">
+              <label class="col-12 col-lg-3 col-md-6">
                 <input name="measure" type="number" step=any placeholder="Width" min="0">
               </label>
-              <label class="dim col-lg-3 form">
+              <label class="col-12 col-lg-3 col-md-6">
                 <input name="measure" type="number" step=any placeholder="Height" min="0">
               </label>
-              <label class="dim col-lg-3" id="sliderLabel">
+              
+              <div class="slide col-12 col-lg-3 col-md-6">
+              <label id="sliderLabel">
                   <input type="checkbox" name="mm_inch" value="mm" checked/>
                       <span id="slider">
                           <span id="sliderMm">MM</span>
@@ -18,13 +20,15 @@ function func() {
                           <span id="sliderBlock"></span>
                       </span>
               </label>`
-    block2 = `<label class="dim col-lg-3 form">
+    block2 = `<label class="col-12 col-lg-3 col-md-6">
                 <input name="measure" type="number" step=any placeholder="Radius outer" min="0">
               </label>
-              <label class="dim col-lg-3 form">
+              <label class="col-12 col-lg-3 col-md-6">
                 <input name="measure" type="number" step=any placeholder="Height" min="0">
               </label>
-              <label class="dim col-lg-3" id="sliderLabel">
+              
+              <div class="slide col-12 col-lg-3 col-md-6">
+              <label id="sliderLabel">
                   <input type="checkbox" name="mm_inch" value="mm" checked/>
                       <span id="slider">
                           <span id="sliderMm">MM</span>
@@ -32,16 +36,18 @@ function func() {
                           <span id="sliderBlock"></span>
                       </span>
               </label>`
-    block3 = `<label class="dim col-lg-3 form">
+    block3 = `<label class="col-12 col-lg-3 col-md-6">
                 <input name="measure" type="number" step=any placeholder="Radius inner" min="0">
               </label>
-              <label class="dim col-lg-3 form">
+              <label class="col-12 col-lg-3 col-md-6">
                   <input name="measure" type="number" step=any placeholder="Radius outer" min="0">
               </label>
-              <label class="dim col-lg-3 form">
+              <label class="col-12 col-lg-3 col-md-6">
                   <input name="measure" type="number" step=any placeholder="Height" min="0">
               </label>
-              <label class="dim col-lg-3" id="sliderLabel">
+              
+              <div class="slide col-12 col-lg-3 col-md-6">
+              <label id="sliderLabel">
                   <input type="checkbox" name="mm_inch" value="mm" checked/>
                       <span id="slider">
                           <span id="sliderMm">MM</span>
@@ -49,10 +55,12 @@ function func() {
                           <span id="sliderBlock"></span>
                       </span>
               </label>`
-    block4 = `<label class="dim col-lg-3 form">
+    block4 = `<label class="col-12 col-lg-3 col-md-6">
                   <input name="measure" type="number" step=any placeholder="Radius outer" min="0">
               </label>
-              <label class="dim col-lg-3" id="sliderLabel">
+              
+              <div class="slide col-12 col-lg-3 col-md-6">
+              <label id="sliderLabel">
                   <input type="checkbox" name="mm_inch" value="mm" checked/>
                       <span id="slider">
                           <span id="sliderMm">MM</span>
