@@ -60,7 +60,8 @@ def get_result():
     elif forma == "cylinder":
         v = pi * good_list[0] ** 2 * good_list[1]
     elif forma == "tube":
-        v = pi / 4 * (2 * good_list[1] ** 2 - 2 * good_list[0] ** 2) * good_list[2]
+        # v = pi / 4 * (2 * good_list[1] ** 2 - 2 * good_list[0] ** 2) * good_list[2]
+        v = pi * (good_list[1] ** 2 - good_list[0] ** 2) * good_list[2]
     elif forma == "ball":
         v = 4 / 3 * pi * good_list[0] ** 3
 
